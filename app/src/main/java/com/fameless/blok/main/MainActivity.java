@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fameless.blok.R;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.enums.Display;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         appUpdater.setDisplay(Display.SNACKBAR);
         appUpdater.setDisplay(Display.DIALOG);
         appUpdater.setDisplay(Display.NOTIFICATION);
+        appUpdater.setUpdateFrom(UpdateFrom.GITHUB);
+        appUpdater.setGitHubUserAndRepo("Fameless4ellL", "BlokinoApp");
         appUpdater.start();
 
     }
