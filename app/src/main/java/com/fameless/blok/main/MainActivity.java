@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fameless.blok.R;
-import com.github.javiersantos.appupdater.AppUpdater;
-import com.github.javiersantos.appupdater.enums.Display;
-import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,12 +19,13 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private RecyclerView recyclerView;
     private ParseAdapter adapter;
     private ArrayList<ParseItem> parseItems = new ArrayList<>();
     private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +41,24 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ParseAdapter(parseItems, this);
         recyclerView.setAdapter(adapter);
 
+
+
+
         Content content = new Content();
         content.execute();
 
-        AppUpdater appUpdater = new AppUpdater(this);
-        appUpdater.setDisplay(Display.SNACKBAR);
-        appUpdater.setDisplay(Display.DIALOG);
-        appUpdater.setDisplay(Display.NOTIFICATION);
-        appUpdater.setUpdateFrom(UpdateFrom.GITHUB);
-        appUpdater.setGitHubUserAndRepo("Fameless4ellL", "BlokinoApp");
-        appUpdater.start();
+//        new AppUpdater(this)
+//                //.setUpdateFrom(UpdateFrom.GITHUB)
+//                //.setGitHubUserAndRepo("javiersantos", "AppUpdater")
+//                .setUpdateFrom(UpdateFrom.JSON)
+//                .setUpdateJSON("https://raw.githubusercontent.com/Fameless4ellL/BlokinoApp/master/blok.json")
+//                .setDisplay(Display.DIALOG)
+//                .showAppUpdated(true)
+//                .start();
 
     }
+
+
 
     private class Content extends AsyncTask<Void,Void,Void>{
 
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             progressBar.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, android.R.anim.fade_out));
             adapter.notifyDataSetChanged();
+            UpdateChecker.checkForDialog(MainActivity.this);
         }
 
         @Override
