@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fameless.blok.R;
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.Display;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -47,14 +50,14 @@ public class MainActivity extends AppCompatActivity  {
         Content content = new Content();
         content.execute();
 
-//        new AppUpdater(this)
-//                //.setUpdateFrom(UpdateFrom.GITHUB)
-//                //.setGitHubUserAndRepo("javiersantos", "AppUpdater")
-//                .setUpdateFrom(UpdateFrom.JSON)
-//                .setUpdateJSON("https://raw.githubusercontent.com/Fameless4ellL/BlokinoApp/master/blok.json")
-//                .setDisplay(Display.DIALOG)
-//                .showAppUpdated(true)
-//                .start();
+        new AppUpdater(this)
+                //.setUpdateFrom(UpdateFrom.GITHUB)
+                //.setGitHubUserAndRepo("javiersantos", "AppUpdater")
+                .setUpdateFrom(UpdateFrom.JSON)
+                .setUpdateJSON("https://raw.githubusercontent.com/Fameless4ellL/BlokinoApp/master/blok.json")
+                .setDisplay(Display.NOTIFICATION)
+                .showAppUpdated(true)
+                .start();
 
     }
 
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity  {
             progressBar.setVisibility(View.GONE);
             progressBar.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, android.R.anim.fade_out));
             adapter.notifyDataSetChanged();
-            UpdateChecker.checkForDialog(MainActivity.this);
+
         }
 
         @Override
