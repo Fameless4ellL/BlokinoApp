@@ -12,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "1.2"
+        versionName "1.2.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,7 +22,6 @@ android {
         }
     }
 }
-
 
 
 dependencies {
@@ -45,5 +44,5 @@ dependencies {
     implementation 'com.googlecode.android-query:android-query:0.25.9'
     implementation 'com.github.javiersantos:AppUpdater:2.7'
 
-}
 
+}

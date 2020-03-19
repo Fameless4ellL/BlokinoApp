@@ -1,5 +1,6 @@
 package com.fameless.blok.main;
 
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity  {
     private ProgressBar progressBar;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +46,6 @@ public class MainActivity extends AppCompatActivity  {
         adapter = new ParseAdapter(parseItems, this);
         recyclerView.setAdapter(adapter);
 
-
-
-
         Content content = new Content();
         content.execute();
 
@@ -56,10 +55,10 @@ public class MainActivity extends AppCompatActivity  {
                 .setUpdateFrom(UpdateFrom.JSON)
                 .setUpdateJSON("https://raw.githubusercontent.com/Fameless4ellL/BlokinoApp/master/blok.json")
                 .setDisplay(Display.NOTIFICATION)
-                .showAppUpdated(true)
                 .start();
 
     }
+
 
 
 
