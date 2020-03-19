@@ -50,10 +50,8 @@ public class MainActivity extends AppCompatActivity  {
         content.execute();
 
         new AppUpdater(this)
-                //.setUpdateFrom(UpdateFrom.GITHUB)
-                //.setGitHubUserAndRepo("javiersantos", "AppUpdater")
-                .setUpdateFrom(UpdateFrom.JSON)
-                .setUpdateJSON("https://raw.githubusercontent.com/Fameless4ellL/BlokinoApp/master/blok.json")
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("Fameless4ellL", "BlokinoApp")
                 .setDisplay(Display.NOTIFICATION)
                 .start();
 
