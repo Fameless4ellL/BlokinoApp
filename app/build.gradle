@@ -11,7 +11,7 @@ android {
         applicationId "com.fameless.blok"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
+        versionCode 10
         versionName "1.2.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
