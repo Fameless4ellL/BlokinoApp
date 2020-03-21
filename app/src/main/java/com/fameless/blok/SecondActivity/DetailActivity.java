@@ -2,7 +2,7 @@ package com.fameless.blok.SecondActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,6 +62,17 @@ public class DetailActivity extends AppCompatActivity {
         Content content = new Content();
         content.execute();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: // This is the home/back button
+                onBackPressed(); // Handle what to do on home/back press
+                break;
+        }
+
+        return false;
     }
 
     private class Content extends AsyncTask<Void, Void, Void> {
@@ -126,7 +137,7 @@ public class DetailActivity extends AppCompatActivity {
                                 .attr("href");
 
                         items.add(new item(week, title, img, text, DetailUrl, grade));
-                        Log.d("items", "img: " + img + "title: " + title + "text: " + text);
+                        //Log.d("items", "img: " + img + "title: " + title + "text: " + text);
                     } else {
                         j=j+1;
                         i=i-1;

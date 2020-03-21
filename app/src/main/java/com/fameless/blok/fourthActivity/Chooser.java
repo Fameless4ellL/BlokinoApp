@@ -3,6 +3,7 @@ package com.fameless.blok.fourthActivity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
@@ -63,6 +64,17 @@ public class Chooser extends AppCompatActivity {
 
         Content content = new Content();
         content.execute();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: // This is the home/back button
+                onBackPressed(); // Handle what to do on home/back press
+                break;
+        }
+
+        return false;
     }
 
     private class Content extends AsyncTask<Void,Void,Void> {

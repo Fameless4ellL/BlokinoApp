@@ -2,6 +2,7 @@ package com.fameless.blok.ThirdActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,6 +59,17 @@ public class ActivityForSerial extends AppCompatActivity {
         content.execute();
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: // This is the home/back button
+                onBackPressed(); // Handle what to do on home/back press
+                break;
+        }
+
+        return false;
     }
 
     private class Content extends AsyncTask<Void,Void,Void>{
