@@ -17,6 +17,7 @@ import com.fameless.blok.R;
 import com.fameless.blok.ThirdActivity.ActivityForSerial;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +63,13 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.ViewHolder> 
     private Filter AnimeFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
+            try {
+                animeFull = (ArrayList<AnimeItem>)ObjectToFileUtil.objectFromFile(Anime_Activity.dataPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             List<AnimeItem> filteredList = new ArrayList<>();
             if (charSequence == null || charSequence.length() == 0){
                 filteredList.addAll(animeFull);

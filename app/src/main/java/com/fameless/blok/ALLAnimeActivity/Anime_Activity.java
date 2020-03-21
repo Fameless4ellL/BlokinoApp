@@ -114,7 +114,7 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
         Type type = new TypeToken<ArrayList<AnimeItem>>() {}.getType();
         animeItems = gson.fromJson(json, type);
 
-        if (animeItems == null){
+        if (animeItems == null) {
             animeItems = new ArrayList<>();
         }
 
@@ -181,6 +181,7 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
             @Override
             public boolean onQueryTextChange(String newText) {
                 animeAdapter.getFilter().filter(newText);
+                loadData();
                 return false;
             }
         });
@@ -227,6 +228,11 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
             progressBar.startAnimation(AnimationUtils.loadAnimation(Anime_Activity.this, android.R.anim.fade_out));
             animeAdapter.notifyDataSetChanged();
             try {
+                dataPath = ObjectToFileUtil.objectToFile(animeItems);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
                 saveData();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -241,7 +247,7 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            if (animeItems == null) {
+            if (animeItems.isEmpty()) {
                 try {
                     String url = "https://blokino.org/anime/";
                     Document doc = Jsoup.connect(url).get();
