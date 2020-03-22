@@ -28,6 +28,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.fameless.blok.R;
 import com.fameless.blok.main.MainActivity;
@@ -52,6 +53,7 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
     private DrawerLayout drawerLayout;
     private AnimeAdapter animeAdapter;
     private transient  ArrayList<AnimeItem> animeItems;
+    SwipeRefreshLayout swipeRefreshLayout;
     private static final  String SHARED_PREFS = "sharedPrefs";
     public  static final String data ="data";
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -74,6 +76,16 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
 
         loadData();
         progressBar = findViewById(R.id.progressBar);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                animeItems.clear();
+                Content content = new Content();
+                content.execute();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
