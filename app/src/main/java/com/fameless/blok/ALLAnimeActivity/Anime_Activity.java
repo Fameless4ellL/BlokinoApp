@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.fameless.blok.NewActivity.activity_news;
 import com.fameless.blok.R;
 import com.fameless.blok.main.MainActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -219,6 +220,10 @@ public class Anime_Activity extends AppCompatActivity implements NavigationView.
             case R.id.nav_Schedule:
                 Intent intent1 = new Intent(this, MainActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.nav_News:
+                Intent intent2 = new Intent(this, activity_news.class);
+                startActivity(intent2);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

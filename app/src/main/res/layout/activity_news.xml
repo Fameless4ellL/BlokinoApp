@@ -7,7 +7,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
 
-    tools:context=".main.MainActivity">
+    tools:context=".NewActivity.activity_news">
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

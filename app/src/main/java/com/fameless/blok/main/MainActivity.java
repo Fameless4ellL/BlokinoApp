@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fameless.blok.ALLAnimeActivity.Anime_Activity;
+import com.fameless.blok.NewActivity.activity_news;
 import com.fameless.blok.R;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.enums.Display;
@@ -105,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Schedule:
                 Intent intent1 = new Intent(this, MainActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.nav_News:
+                Intent intent2 = new Intent(this, activity_news.class);
+                startActivity(intent2);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

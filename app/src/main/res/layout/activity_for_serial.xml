@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#131313"
     tools:context=".ThirdActivity.ActivityForSerial">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,6 +40,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:text="Оценка:"
+            android:textColor="#E3DADA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
@@ -81,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Жанр: "
+            android:textColor="#E3DADA"
             app:layout_constraintEnd_toEndOf="@+id/textView14"
             app:layout_constraintStart_toStartOf="@+id/textView14"
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -102,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="TextView"
+            android:textColor="#E3DADA"
             app:layout_constraintEnd_toStartOf="@+id/textView17"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />

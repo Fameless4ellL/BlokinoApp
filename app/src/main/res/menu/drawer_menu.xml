@@ -4,13 +4,17 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_anime"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Аниме">
+        </item>
         <item  android:id="@+id/nav_Schedule"
             android:icon="@drawable/ic_schedule"
             android:title="Расписание">
         </item>
-        <item android:id="@+id/nav_anime"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="Аниме">
+        <item  android:id="@+id/nav_News"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Новости">
         </item>
     </group>
 

@@ -107,6 +107,8 @@ public class Chooser extends AppCompatActivity {
                 String url = detailUrl;
                 Document doc = Jsoup.connect(url).get();
 
+
+
                 Elements data = doc.select("option");
                 //Elements data1 = doc.select("li[id]");
 

@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ALLAnimeActivity.Anime_Activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ALLAnimeActivity.Anime_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".main.SplashScreen"
             android:theme="@style/SplashTheme">
@@ -24,6 +25,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".NewActivity.activity_news"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".WebPageActivity"
@@ -34,14 +38,11 @@
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />
         <activity android:name=".fourthActivity.Chooser" />
-        <activity
-            android:name=".ThirdActivity.ActivityForSerial" />
-        <activity
-            android:name=".SecondActivity.DetailActivity"
-             />
+        <activity android:name=".ThirdActivity.ActivityForSerial" />
+        <activity android:name=".SecondActivity.DetailActivity" />
         <activity
             android:name=".main.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
