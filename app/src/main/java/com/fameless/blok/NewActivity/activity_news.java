@@ -22,6 +22,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.fameless.blok.ALLAnimeActivity.Anime_Activity;
 import com.fameless.blok.R;
 import com.fameless.blok.main.MainActivity;
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.Display;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 import com.google.android.material.navigation.NavigationView;
 
 import org.jsoup.Jsoup;
@@ -81,6 +84,12 @@ public class activity_news extends AppCompatActivity implements NavigationView.O
 
         Content content = new Content();
         content.execute();
+
+        new AppUpdater(this)
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("Fameless4ellL", "BlokinoApp")
+                .setDisplay(Display.NOTIFICATION)
+                .start();
     }
 
     @Override
